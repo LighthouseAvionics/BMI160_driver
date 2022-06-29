@@ -6394,10 +6394,10 @@ static int8_t trigger_foc(struct bmi160_offsets *offset, struct bmi160_dev const
 
         if ((rslt != BMI160_OK) || (foc_status != BMI160_ENABLE))
         {
-            while ((foc_status != BMI160_ENABLE) && (timeout < 11))
+            while ((foc_status != BMI160_ENABLE) && (timeout < 30))
             {
-                /* Maximum time of 250ms is given in 10
-                 * steps of 25ms each - 250ms refer datasheet 2.9.1 */
+                /* Maximum time of 725ms is given in 29
+                 * steps of 25ms each - 725ms refer datasheet 2.9.1 */
                 dev->delay_ms(25);
 
                 /* Check the FOC status*/
